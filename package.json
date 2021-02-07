@@ -1,10 +1,12 @@
 {
-  "name": "simpleselect",
-  "version": "0.1.0",
+  "name": "@schumskie/simpleselect",
+  "version": "0.2.0",
   "description": "this is a tiny library for making single and multiple select elements decent looking - Highly customizable",
-  "main": "src/index.js",
+  "main": "dist/smartselect.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "build": "NODE_ENV=production webpack --mode production",
+    "serve": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,20 @@
   "bugs": {
     "url": "https://github.com/schumskie/simpleselect/issues"
   },
-  "homepage": "https://github.com/schumskie/simpleselect#readme"
+  "homepage": "https://github.com/schumskie/simpleselect#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^5.0.0",
+    "mini-css-extract-plugin": "^1.3.5",
+    "prettier": "^2.2.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
 }
