@@ -1,0 +1,25 @@
+{
+  "name": "simpleselect",
+  "version": "0.1.0",
+  "description": "this is a tiny library for making single and multiple select elements decent looking - Highly customizable",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schumskie/simpleselect.git"
+  },
+  "keywords": [
+    "select",
+    "multiselect",
+    "custom",
+    "nodependencies"
+  ],
+  "author": "Stefan Jeremic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schumskie/simpleselect/issues"
+  },
+  "homepage": "https://github.com/schumskie/simpleselect#readme"
+}
