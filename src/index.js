@@ -33,7 +33,7 @@ class MultiDisplay extends Display {
     });
   }
   makeNode(key) {
-    const i = $make("div", "smart-select__selected");
+    const i = $make("div", "simple-select__selected");
     const item = this.store.itemsMap[key];
     i.dataset.action = "remove";
     i.dataset.key = item.value;
@@ -83,7 +83,7 @@ class OptionList {
 
     this.$optionsMap = {};
     for (let key in this.store.itemsMap) {
-      const $option = $make("div", "smart-select__option");
+      const $option = $make("div", "simple-select__option");
       $option.dataset.option = key;
       $option.textContent = this.store.itemsMap[key].label;
 
@@ -97,9 +97,9 @@ class OptionList {
       if (i == 0) {
         this.setPointed(key);
       }
-      this.$optionsMap[key].classList.remove("smart-select__option--selected");
+      this.$optionsMap[key].classList.remove("simple-select__option--selected");
       if (this.store.value.includes(key)) {
-        this.$optionsMap[key].classList.add("smart-select__option--selected");
+        this.$optionsMap[key].classList.add("simple-select__option--selected");
       }
       this.$el.appendChild(this.$optionsMap[key]);
     });
@@ -107,10 +107,10 @@ class OptionList {
 
   setPointed(key) {
     if (this.$pointedElement) {
-      this.$pointedElement.classList.remove("smart-select__option--pointed");
+      this.$pointedElement.classList.remove("simple-select__option--pointed");
     }
     this.$pointedElement = this.$optionsMap[key];
-    this.$pointedElement.classList.add("smart-select__option--pointed");
+    this.$pointedElement.classList.add("simple-select__option--pointed");
   }
 }
 
@@ -132,26 +132,26 @@ class SmartSelect {
   }
   makeNodes() {
     const html = `
-        <div class="smart-select__display-wrapper arrow-down">  
-            <div class="smart-select__display"></div>
-            <input type="text" class="smart-select__input"/>
+        <div class="simple-select__display-wrapper arrow-down">  
+            <div class="simple-select__display"></div>
+            <input type="text" class="simple-select__input"/>
         </div>
-        <div class="smart-select__dropdown"></div>`;
+        <div class="simple-select__dropdown"></div>`;
 
-    this.$root = $make("div", "smart-select");
+    this.$root = $make("div", "simple-select");
     if (this.multi) {
-      this.$root.classList.add("smart-select--multi");
+      this.$root.classList.add("simple-select--multi");
     }
     if (this.store.config.theme) {
       this.$root.classList.add(this.store.config.theme);
     }
     this.$root.innerHTML = html;
-    this.$display = this.$root.querySelector(".smart-select__display");
+    this.$display = this.$root.querySelector(".simple-select__display");
     this.$displayWrapper = this.$root.querySelector(
-      ".smart-select__display-wrapper"
+      ".simple-select__display-wrapper"
     );
-    this.$input = this.$root.querySelector(".smart-select__input");
-    this.$dropdown = this.$root.querySelector(".smart-select__dropdown");
+    this.$input = this.$root.querySelector(".simple-select__input");
+    this.$dropdown = this.$root.querySelector(".simple-select__dropdown");
 
     this.$displayWrapper.addEventListener("click", () => {
       this.store.opened = true;
@@ -192,10 +192,10 @@ class SmartSelect {
 
     this.store.registerListener("opened", (val) => {
       if (val) {
-        this.$root.classList.add("smart-select--opened");
+        this.$root.classList.add("simple-select--opened");
         this.$input.focus();
       } else {
-        this.$root.classList.remove("smart-select--opened");
+        this.$root.classList.remove("simple-select--opened");
       }
     });
 
