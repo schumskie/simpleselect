@@ -47,7 +47,7 @@ Define new theme in your css file using CSS varibles
 
 ```css
 .simple-select.green {
-    --selected-option-color: green;
+    --option-hover-color: green;
     --border-radius: 0px;
 }
 ```
