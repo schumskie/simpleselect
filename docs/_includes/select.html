@@ -1,4 +1,4 @@
-<select id="countries" name="countries" {{include.multiple}} >
+<select id="{{include.id}}" style="display:none;" name="{{include.id}}" {{include.multiple}} >
 {%- for country in site.data.countries -%}
 <option value="{{country.name}}">{{country.name}}</option>
 {%- endfor -%}

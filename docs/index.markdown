@@ -2,10 +2,9 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: default
 ---
 
-<script src="https://unpkg.com/@schumskie/simpleselect"></script>
 # SimpleSelect
 
 Tiny javascript library which helps you apply custom style on select and multiselect elements. Easy to configure and use!
@@ -13,11 +12,11 @@ Tiny javascript library which helps you apply custom style on select and multise
 ## Example
 ### Single Select
 
-{% include select.html %}
+{% include select.html id="single-select" %}
 
 ### Multi Select
 
-{% include select.html multiple="multiple" %}
+{% include select.html id="multi-select" multiple="multiple" %}
 
 ## Usage
 ### Via NPM
@@ -30,7 +29,7 @@ npm install @schumskie/simpleselect
 <script src="https://unpkg.com/@schumskie/simpleselect"></script>
 ```
 
-Code:
+### Code:
 ```javascript
 // If you are using ES6
 import SimpleSelect from '@schumskie/simpleselect'
@@ -42,16 +41,29 @@ SimpleSelect.init('select');
 SimpleSelect.init('#select');
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Styling
 
-### Jekyll Themes
+Define new theme in your css file using CSS varibles
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/schumskie/simpleselect/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```css
+.simple-select.green {
+    --option-selected-color: green;
+    --border-radius: 0px;
+}
+```
 
-### Support or Contact
+Apply new theme to specific element
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```javascript
+SimpleSelect.init('#green-select', {theme: 'green'});
+```
+
+### Result
+
+{% include select.html id="green-select" multiple="multiple" %}
 
 <script>
-    SimpleSelect.init('select');
+    SimpleSelect.init('#single-select');
+    SimpleSelect.init('#multi-select');
+    SimpleSelect.init('#green-select', {theme: 'green'});
 </script>
