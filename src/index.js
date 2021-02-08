@@ -219,22 +219,25 @@ const init = function (
     theme: "",
   }
 ) {
-  const $el = typeof el === "string" ? document.querySelector(el) : el;
+  const $elements =
+    typeof el === "string" ? Array.from(document.querySelectorAll(el)) : [el];
 
-  $el.hidden = true;
-  const items = Array.from($el.options).map((o) => ({
-    value: o.value,
-    label: o.text,
-  }));
-  let value = Array.from($el.options)
-    .filter((o) => o.selected)
-    .map((o) => o.value);
-  if (!$el.multiple) {
-    value = value[0];
-  }
-  const s = new SmartSelect({ items, value, multi: $el.multiple }, config);
-  s.$el = $el;
-  $el.insertAdjacentElement("afterend", s.$root);
+  $elements.forEach(($el) => {
+    $el.hidden = true;
+    const items = Array.from($el.options).map((o) => ({
+      value: o.value,
+      label: o.text,
+    }));
+    let value = Array.from($el.options)
+      .filter((o) => o.selected)
+      .map((o) => o.value);
+    if (!$el.multiple) {
+      value = value[0];
+    }
+    const s = new SmartSelect({ items, value, multi: $el.multiple }, config);
+    s.$el = $el;
+    $el.insertAdjacentElement("afterend", s.$root);
+  });
 };
 
 export default { init };
