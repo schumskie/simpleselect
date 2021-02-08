@@ -10,19 +10,21 @@ npm install @schumskie/simpleselect
 ```
 
 ```javascript
-import SimpleSelect from "@schumskie/simpleselect"
-SimpleSelect.init("select") //will apply on all select elements.
-
-SimpleSelect.init('#my-select") //will apply on select with 'my-select' id.
+import SimpleSelect from "@schumskie/simpleselect";
+// will apply on all select elements.
+SimpleSelect.init("select"); 
+// will apply on select with 'my-select' id.
+SimpleSelect.init('#my-select"); 
 ```
 ## Via CDN
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@schumskie/simpleselect@latest/dist/simpleselect.js">
 ```
 ```javascript
-SimpleSelect.init("select") //will apply on all select elements.
-
-SimpleSelect.init('#my-select") //will apply on select with 'my-select' id.
+// will apply on all select elements.
+SimpleSelect.init("select"); 
+// will apply on select with 'my-select' id.
+SimpleSelect.init('#my-select"); 
 ```
 
 More info comming soon!
