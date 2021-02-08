@@ -10,7 +10,7 @@ npm install @schumskie/simpleselect
 ```
 ## Via CDN
 ```html
-<script src="https://unpkg.com/@schumskie/simpleselect@latest/dist/simpleselect.js">
+<script src="https://unpkg.com/@schumskie/simpleselect@latest/dist/simpleselect.js"></script>
 ```
 # Usage
 ```javascript
