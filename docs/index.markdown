@@ -12,11 +12,11 @@ Tiny javascript library which helps you apply custom style on select and multise
 ## Example
 ### Single Select
 
-{% include select.html id="single-select" %}
+{% include select.html id="select-single" %}
 
 ### Multi Select
 
-{% include select.html id="multi-select" multiple="multiple" %}
+{% include select.html id="select-multi" multiple="multiple" %}
 
 ## Usage
 ### Via NPM
@@ -60,10 +60,10 @@ SimpleSelect.init('#green-select', {theme: 'green'});
 
 ### Result
 
-{% include select.html id="green-select" multiple="multiple" %}
+{% include select.html id="select-green" multiple="multiple" %}
 
 <script>
-    SimpleSelect.init('#single-select');
-    SimpleSelect.init('#multi-select');
-    SimpleSelect.init('#green-select', {theme: 'green'});
+    SimpleSelect.init('#select-single')
+    SimpleSelect.init('#select-multi');
+    SimpleSelect.init('#select-green', {theme: 'green'});
 </script>
