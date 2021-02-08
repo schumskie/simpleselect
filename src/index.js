@@ -228,9 +228,11 @@ const init = function (
       value: o.value,
       label: o.text,
     }));
+
     let value = Array.from($el.options)
       .filter((o) => o.selected)
       .map((o) => o.value);
+
     if (!$el.multiple) {
       value = value[0];
     }

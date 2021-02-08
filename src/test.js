@@ -1,3 +1,4 @@
-import smartselect from "./index";
+import SimpleSelect from "./index";
 
-smartselect.init("select");
+SimpleSelect.init("#select");
+SimpleSelect.init("#multiselect");
