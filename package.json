@@ -1,6 +1,6 @@
 {
   "name": "@schumskie/simpleselect",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "this is a tiny library for making single and multiple select elements decent looking - Highly customizable",
   "main": "dist/simpleselect.js",
   "scripts": {
