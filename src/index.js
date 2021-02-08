@@ -209,7 +209,7 @@ class SmartSelect {
   }
 }
 
-export default function (
+const smartselect = function (
   el,
   config = {
     placeholder: "Please Select...",
@@ -231,4 +231,7 @@ export default function (
   const s = new SmartSelect({ items, value, multi: $el.multiple }, config);
   s.$el = $el;
   $el.insertAdjacentElement("afterend", s.$root);
-}
+};
+
+export default smartselect;
+export { smartselect };
