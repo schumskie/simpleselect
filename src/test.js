@@ -1,4 +1,4 @@
 import smartselect from "./index";
 
-smartselect("#select");
-smartselect("#multiselect");
+smartselect.init("#select");
+smartselect.init("#multiselect");

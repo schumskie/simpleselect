@@ -9,8 +9,8 @@ module.exports = (env, argv) => {
   return {
     entry: isDev ? "./src/test.js" : "./src/index.js",
     output: {
-      filename: `smartselect.js`,
-      library: isDev ? undefined : "smartselect", // Important
+      filename: `simpleselect.js`,
+      library: isDev ? undefined : "SimpleSelect", // Important
       libraryTarget: isDev ? undefined : "umd", // Important
       path: path.resolve(__dirname, "dist"),
     },
@@ -30,7 +30,8 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/i,
           use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            //isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            "style-loader",
             "css-loader",
           ],
         },
@@ -43,7 +44,7 @@ module.exports = (env, argv) => {
     plugins: [
       new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
       new MiniCssExtractPlugin({
-        filename: `[name].css`,
+        filename: `simpleselect.css`,
       }),
       new HtmlWebpackPlugin({
         title: "Simple Select",

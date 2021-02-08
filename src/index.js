@@ -1,7 +1,7 @@
 import "./select.css";
 import createStore from "./store.js";
 
-const make = (tag, className = "") => {
+const $make = (tag, className = "") => {
   const $el = document.createElement(tag);
   $el.className = className;
   return $el;
@@ -33,7 +33,7 @@ class MultiDisplay extends Display {
     });
   }
   makeNode(key) {
-    const i = make("div", "smart-select__selected");
+    const i = $make("div", "smart-select__selected");
     const item = this.store.itemsMap[key];
     i.dataset.action = "remove";
     i.dataset.key = item.value;
@@ -83,7 +83,7 @@ class OptionList {
 
     this.$optionsMap = {};
     for (let key in this.store.itemsMap) {
-      const $option = make("div", "smart-select__option");
+      const $option = $make("div", "smart-select__option");
       $option.dataset.option = key;
       $option.textContent = this.store.itemsMap[key].label;
 
@@ -138,9 +138,12 @@ class SmartSelect {
         </div>
         <div class="smart-select__dropdown"></div>`;
 
-    this.$root = make("div", "smart-select");
+    this.$root = $make("div", "smart-select");
     if (this.multi) {
       this.$root.classList.add("smart-select--multi");
+    }
+    if (this.store.config.theme) {
+      this.$root.classList.add(this.store.config.theme);
     }
     this.$root.innerHTML = html;
     this.$display = this.$root.querySelector(".smart-select__display");
@@ -209,10 +212,11 @@ class SmartSelect {
   }
 }
 
-const smartselect = function (
+const init = function (
   el,
   config = {
     placeholder: "Please Select...",
+    theme: "",
   }
 ) {
   const $el = typeof el === "string" ? document.querySelector(el) : el;
@@ -233,5 +237,5 @@ const smartselect = function (
   $el.insertAdjacentElement("afterend", s.$root);
 };
 
-export default smartselect;
-export { smartselect };
+export default { init };
+export { init };

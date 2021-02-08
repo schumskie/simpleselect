@@ -1,8 +1,8 @@
 {
   "name": "@schumskie/simpleselect",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "this is a tiny library for making single and multiple select elements decent looking - Highly customizable",
-  "main": "dist/smartselect.js",
+  "main": "dist/simpleselect.js",
   "scripts": {
     "dev": "webpack --mode development",
     "build": "NODE_ENV=production webpack --mode production",
