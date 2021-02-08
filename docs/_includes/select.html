@@ -1,0 +1,13 @@
+<h2>Regular Select</h2>
+<select id="countries" name="countries">
+{%- for country in site.data.countries -%}
+<option value="{{country.name}}">{{country.name}}</option>
+{%- endfor -%}
+</select>
+
+<h2>Multi Select</h2>
+<select id="countries_multi" name="countries_multi" multiple>
+{%- for country in site.data.countries -%}
+<option value="{{country.name}}">{{country.name}}</option>
+{%- endfor -%}
+</select>
