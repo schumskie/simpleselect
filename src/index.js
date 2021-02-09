@@ -128,7 +128,6 @@ class SmartSelect {
       : new Display(this.$display, this.store);
 
     this.optionList = new OptionList(this.$dropdown, this.store);
-    this.registerStoreListeners();
   }
   makeNodes() {
     const html = `
@@ -184,7 +183,12 @@ class SmartSelect {
       this.store.opened = false;
     });
   }
-  registerStoreListeners() {
+  mount($el) {
+    this.registerStoreListeners($el);
+    //$el.hidden = true;
+    $el.insertAdjacentElement("afterend", this.$root);
+  }
+  registerStoreListeners($el) {
     this.store.registerListener("query", (val) => {
       this.$input.value = val;
       this.optionList.update();
@@ -202,11 +206,13 @@ class SmartSelect {
     this.store.registerListener("value", (val) => {
       this.display.update();
       if (this.multi) {
-        Array.from(this.$el.options).forEach(($opt) => {
+        Array.from($el.options).forEach(($opt) => {
           $opt.selected = this.store.value.includes($opt.value);
         });
       } else {
-        this.$el.value = val;
+        Array.from($el.options).forEach(($opt) => {
+          $opt.selected = this.store.value === $opt.value;
+        });
       }
     });
   }
@@ -223,7 +229,6 @@ const init = function (
     typeof el === "string" ? Array.from(document.querySelectorAll(el)) : [el];
 
   $elements.forEach(($el) => {
-    $el.hidden = true;
     const items = Array.from($el.options).map((o) => ({
       value: o.value,
       label: o.text,
@@ -237,8 +242,7 @@ const init = function (
       value = value[0];
     }
     const s = new SmartSelect({ items, value, multi: $el.multiple }, config);
-    s.$el = $el;
-    $el.insertAdjacentElement("afterend", s.$root);
+    s.mount($el);
   });
 };
 
