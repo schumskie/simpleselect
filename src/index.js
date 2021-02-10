@@ -185,7 +185,7 @@ class SmartSelect {
   }
   mount($el) {
     this.registerStoreListeners($el);
-    //$el.hidden = true;
+    $el.hidden = true;
     $el.insertAdjacentElement("afterend", this.$root);
   }
   registerStoreListeners($el) {
