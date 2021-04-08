@@ -117,8 +117,11 @@ class OptionList {
 class SmartSelect {
   constructor(
     { items = [], value = "", filter = null, multi = false },
-    config
+    config = {}
   ) {
+    config.placeholder = config.placeholder || "Please Select...";
+    config.theme = config.theme || "";
+
     this.store = createStore({ items, value, filter, multi, config });
 
     this.multi = multi;
@@ -247,4 +250,4 @@ const init = function (
 };
 
 export default { init };
-export { init };
+export { init, SmartSelect };
