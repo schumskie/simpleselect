@@ -217,6 +217,7 @@ class SmartSelect {
           $opt.selected = this.store.value === $opt.value;
         });
       }
+      $el.dispatchEvent(new Event("change"));
     });
   }
 }
