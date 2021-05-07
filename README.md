@@ -1,6 +1,7 @@
-# simpleselect
+# SimpleSelect
 
-SimpleSelect is a library which helps you to better style your select/multiselect elements.
+SimpleSelect is a library which makes your select/multiselect elements beautiful, and fully customizable. It has *zero* dependencies, so it is quite tiny.
+<img src="/schumskie/simpleselect/images/show.gif" style="max-width:100%"/>
 
 
 # Instalation

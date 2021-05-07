@@ -4,9 +4,9 @@
   line-height: 1.5em;
   --option-hover-bg-color: #0ea5e9;
   --option-hover-color: black;
-  --option-selected-bg-color: #f5f5f4;
+  --option-selected-bg-color: #ccc;
   --option-selected-color: white;
-  --border-color: #111;
+  --border-color: #ccc;
   --spacing: 0.125rem;
   --border-radius: 0.25rem;
   --border-width: 1px;
@@ -34,7 +34,7 @@
   background: none;
   align-items: center;
   box-sizing: border-box;
-  height: var(--select-height);
+  min-height: var(--select-height);
   cursor: pointer;
   display: flex;
   line-height: 1em;
