@@ -24,4 +24,5 @@ SimpleSelect.init("select");
 SimpleSelect.init('#my-select"); 
 ```
 
-More info comming soon!
+# Example
+https://schumskie.github.io/simpleselect/
